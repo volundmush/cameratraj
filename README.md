@@ -2,7 +2,7 @@
 
 This project extends the previous plain-Python ray tracer with a moving camera animation. The camera path is built from several keyframe poses and interpolated on Lie groups instead of by treating camera matrices like ordinary numbers.
 
-The deliverable code is script-based: no notebooks are required.
+The deliverable code is script-based: no notebooks are required. This is because I am struggling to handle advanced operations in Notebooks that use complex system libraries while using Bazzite as my OS, and those libraries also aren't liking my current outdated GPU one bit.
 
 ## How To Run
 
@@ -48,7 +48,7 @@ The previous still-image assignment renders are still available:
 
 `rayTrace.py` is the original recursive ray tracer. It still owns the scene, materials, camera rays, reflections, refractions, glossy reflection, and soft shadows.
 
-`cameraTrajectory.py` adds the assignment-specific camera motion work:
+`cameraTrajectory.py` adds the new moving camera:
 
 - SE(3) exponential and logarithm maps
 - SO(3) exponential and logarithm maps
@@ -206,7 +206,7 @@ Plain English version: this is not just camera A to camera B. It is a multi-stop
 
 ## Implementation Notes
 
-The project intentionally avoids notebook-only work. The math is implemented in `cameraTrajectory.py` using only `numpy`:
+The math is implemented in `cameraTrajectory.py` using only `numpy`:
 
 - `so3_exp` and `so3_log` implement Rodrigues-style rotation maps.
 - `se3_exp` and `se3_log` use the SO(3) left Jacobian to handle coupled rotation and translation.
@@ -222,12 +222,7 @@ The project intentionally avoids notebook-only work. The math is implemented in 
 - Trajectory visualization: `outputs/trajectory_comparison.png`
 - SE(3) versus SO(3) versus Euclidean comparison: `cameraTrajectory.py --visualize`
 - Tangent-space perturbations: `left-perturbed` and `right-perturbed`
-- Report: this `README.md`
+- Report: this `README.md` you're reading right now!
 
-## Video Link
-
-After rendering and uploading the video, place the hosted URL here:
-
-```text
-TODO: paste Vimeo/YouTube/etc. link here
-```
+## Video
+The output was small, so it's `demo.mp4` in the project root.
