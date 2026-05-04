@@ -1,0 +1,5 @@
+__pycache__/
+*.py[cod]
+frames/
+smoke_frames/
+outputs/*.mp4
